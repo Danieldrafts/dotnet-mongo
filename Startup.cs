@@ -26,7 +26,7 @@ namespace api.mongo
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddSingleton<Dapi.mongo.MongoDB>();
+            services.AddSingleton<Data.MongoDB>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
