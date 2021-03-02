@@ -1,3 +1,4 @@
+using System;
 using api.mongo.Data;
 using api.mongo.Data.Collections;
 using api.mongo.Models;
@@ -35,6 +36,20 @@ namespace api.mongo.Controllers
             var infectados = _infectadosCollection.Find(Builders<Infectado>.Filter.Empty).ToList();
             
             return Ok(infectados);
+        }
+
+        [HttpPut]
+        public ActionResult AtualizarSexoInfectado([FromBody] InfectadoDto dto)
+        {
+            _infectadosCollection.UpdateOne(Builders<Infectado>.Filter.Where(i => i.DataNascimento == dto.DataNascimento), Builders<Infectado>.Update.Set("sexo", dto.Sexo));
+            return Ok("Atualizado");
+        }
+
+        [HttpDelete("{dataNascimento}")]
+        public ActionResult DeletePorDataNascimento(DateTime dataNascimento)
+        {
+            _infectadosCollection.DeleteOne(Builders<Infectado>.Filter.Where(i => i.DataNascimento == dataNascimento));
+            return Ok("Atualizado");
         }
     }
 }
