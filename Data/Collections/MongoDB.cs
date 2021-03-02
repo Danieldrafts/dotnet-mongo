@@ -1,11 +1,11 @@
 using System;
-using Api.Data.Collections;
+using api.mongo.Data.Collections;
 using Microsoft.Extensions.Configuration;
 using MongoDB.Bson.Serialization;
 using MongoDB.Bson.Serialization.Conventions;
 using MongoDB.Driver;
 
-namespace Api.Data
+namespace api.mongo.Data
 {
     public class MongoDB
     {

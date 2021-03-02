@@ -2,7 +2,7 @@
 using System;
 using MongoDB.Driver.GeoJsonObjectModel;
 
-namespace Api.Data.Collections
+namespace api.mongo.Data.Collections
 {
     public class Infectado
     {
