@@ -9,10 +9,10 @@ namespace api.mongo.Controllers
     [Route("[controller]")]
     public class InfectadoController : ControllerBase
     {
-        Data.MongoDB _mongoDB;
+        api.mongo.MongoDB _mongoDB;
         IMongoCollection<Infectado> _infectadosCollection;
 
-        public InfectadoController(Data.MongoDB mongoDB)
+        public InfectadoController(api.mongo.MongoDB mongoDB)
         {
             _mongoDB = mongoDB;
             _infectadosCollection = _mongoDB.DB.GetCollection<Infectado>(typeof(Infectado).Name.ToLower());
